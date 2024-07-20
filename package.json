@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "json-server": "json-server --watch api-projetos/projetos.json --port 8000"
+    "json-server": "json-server --watch api-projetos/projetos.json --port 8000",
+    "start-vercel": "npm run dev && npm run json-server"
   },
   "repository": {
     "type": "git",

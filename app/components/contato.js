@@ -1,7 +1,7 @@
 'use client';
-import React, {useEffect, useRef, useState} from 'react';
-import {Domine} from 'next/font/google';
-import {toast} from 'sonner';
+import React, { useEffect, useRef, useState } from 'react';
+import { Domine } from 'next/font/google';
+import { toast } from 'sonner';
 
 // eslint-disable-next-line new-cap
 const domine = Domine({
@@ -33,6 +33,94 @@ export default function Contato() {
   const refNome = useRef(null);
   const refForm = useRef(null);
 
+  /**
+   * Manipula o evento blur para validar o campo de entrada.
+   * @param {Event} event - O evento blur.
+   */
+  const handleBlur = useCallback(
+    (event) => {
+      const tiposDeErro = [
+        'valueMissing',
+        'typeMismatch',
+        'patternMismatch',
+        'customError',
+      ];
+
+      const mensagensDeErro = {
+        nome: {
+          valueMissing:
+            'Por favor, preencha o campo nome. Este campo não pode ficar em branco.',
+          typeMismatch:
+            'O nome inserido não parece ser válido. Por favor, tente novamente.',
+          patternMismatch:
+            'O nome inserido não segue o formato esperado. Por favor, tente novamente.',
+        },
+        assunto: {
+          valueMissing:
+            'Por favor, preencha o campo de assunto. Este não pode ficar em branco.',
+          typeMismatch:
+            'O assunto inserido não parece ser válido. Por favor, tente novamente.',
+          patternMismatch:
+            'O assunto inserido não segue o formato esperado. Por favor, tente novamente.',
+        },
+        mensagem: {
+          valueMissing:
+            'Por favor, preencha o campo de mensagem. Este não pode ficar em branco.',
+          typeMismatch:
+            'A mensagem inserida não parece ser válida. Por favor, tente novamente.',
+          patternMismatch:
+            'A mensagem inserida não segue o formato esperado. Por favor, tente novamente.',
+        },
+      };
+
+      const mostraMensagemDeErro = (tipoDeInput, input) => {
+        let mensagem = '';
+        tiposDeErro.forEach((erro) => {
+          if (input.validity[erro]) {
+            mensagem = mensagensDeErro[tipoDeInput][erro];
+          }
+        });
+        return mensagem;
+      };
+
+      const valida = (target) => {
+        const tipoDeInput = inputAlvo.dataset.tipo;
+        if (inputAlvo.validity.valid) {
+          const spanElement = inputAlvo.parentNode.querySelector('.error-span');
+          if (spanElement) {
+            spanElement.remove();
+          }
+          setFormValidity((prevState) => ({
+            ...prevState,
+            [tipoDeInput]: true,
+          }));
+        } else {
+          const spanErro = document.createElement('span');
+          const existingSpan =
+            inputAlvo.parentNode.querySelector('.error-span');
+          if (existingSpan) {
+            existingSpan.innerHTML = mostraMensagemDeErro(
+              tipoDeInput,
+              inputAlvo,
+            );
+            return;
+          }
+          spanErro.classList.add('error-span');
+          spanErro.innerHTML = mostraMensagemDeErro(tipoDeInput, inputAlvo);
+          inputAlvo.parentNode.insertBefore(spanErro, inputAlvo.nextSibling);
+          spanErro.classList.add('text-red-800');
+          setFormValidity((prevState) => ({
+            ...prevState,
+            [tipoDeInput]: false,
+          }));
+        }
+        setIsFormValid(Object.values(formValidity).every(Boolean));
+      };
+      valida(event.target);
+    },
+    [formValidity],
+  );
+
   useEffect(() => {
     const refs = [refAssunto, refMensagem, refNome];
     refs.forEach((ref) => {
@@ -53,97 +141,15 @@ export default function Contato() {
         }
       });
     };
-  }, []);
-
-  /**
-   * Manipula o evento blur para validar o campo de entrada.
-   * @param {Event} event - O evento blur.
-   */
-  function handleBlur(event) {
-    valida(event.target);
-  }
-
-  /**
-   * Valida o campo de entrada e exibe mensagens de erro, se necessário.
-   * @param {HTMLElement} inputAlvo - O elemento de entrada
-   * de destino a ser validado.
-   */
-  function valida(inputAlvo) {
-    const tipoDeInput = inputAlvo.dataset.tipo;
-    if (inputAlvo.validity.valid) {
-      const spanElement = inputAlvo.parentNode.querySelector('.error-span');
-      if (spanElement) {
-        spanElement.remove();
-      }
-      setFormValidity((prevState) => ({...prevState, [tipoDeInput]: true}));
-    } else {
-      const spanErro = document.createElement('span');
-      const existingSpan = inputAlvo.parentNode.querySelector('.error-span');
-      if (existingSpan) {
-        existingSpan.innerHTML = mostraMensagemDeErro(tipoDeInput, inputAlvo);
-        return;
-      }
-      spanErro.classList.add('error-span');
-      spanErro.innerHTML = mostraMensagemDeErro(tipoDeInput, inputAlvo);
-      inputAlvo.parentNode.insertBefore(spanErro, inputAlvo.nextSibling);
-      spanErro.classList.add('text-red-800');
-      setFormValidity((prevState) => ({...prevState, [tipoDeInput]: false}));
-    }
-    setIsFormValid(Object.values(formValidity).every(Boolean));
-  }
-
-  const tiposDeErro = ['valueMissing', 'typeMismatch',
-    'patternMismatch', 'customError'];
-
-  const mensagensDeErro = {
-    nome: {
-      valueMissing:
-        'Por favor, preencha o campo nome. Este campo não pode ficar em branco.',
-      typeMismatch:
-        'O nome inserido não parece ser válido. Por favor, tente novamente.',
-      patternMismatch:
-        'O nome inserido não segue o formato esperado. Por favor, tente novamente.',
-    },
-    assunto: {
-      valueMissing:
-        'Por favor, preencha o campo de assunto. Este não pode ficar em branco.',
-      typeMismatch:
-        'O assunto inserido não parece ser válido. Por favor, tente novamente.',
-      patternMismatch:
-        'O assunto inserido não segue o formato esperado. Por favor, tente novamente.',
-    },
-    mensagem: {
-      valueMissing:
-        'Por favor, preencha o campo de mensagem. Este não pode ficar em branco.',
-      typeMismatch:
-        'A mensagem inserida não parece ser válida. Por favor, tente novamente.',
-      patternMismatch:
-        'A mensagem inserida não segue o formato esperado. Por favor, tente novamente.',
-    },
-  };
-
-  /**
-   * Exibe a mensagem de erro apropriada para o campo de entrada.
-   * @param {string} tipoDeInput - O tipo do campo de entrada.
-   * @param {HTMLElement} input - O elemento de entrada.
-   * @return {string} A mensagem de erro.
-   */
-  function mostraMensagemDeErro(tipoDeInput, input) {
-    let mensagem = '';
-    tiposDeErro.forEach((erro) => {
-      if (input.validity[erro]) {
-        mensagem = mensagensDeErro[tipoDeInput][erro];
-      }
-    });
-    return mensagem;
-  }
+  }, [handleBlur]);
 
   /**
    * Exibe uma mensagem de notificação de sucesso.
    */
   const notificacoesMensagem = () => {
     toast.success('Obrigado por entrar em contato!', {
-      description: 'Aguardo sua escolha do provedor para processar sua mensagem. A partir disso, você terá a liberdade de selecionar o provedor de envio que mais lhe agrada.',
+      description:
+        'Aguardo sua escolha do provedor para processar sua mensagem. A partir disso, você terá a liberdade de selecionar o provedor de envio que mais lhe agrada.',
       closeButton: true,
       onAutoClose: false,
       unstyled: true,
@@ -158,7 +164,7 @@ export default function Contato() {
 
   useEffect(() => {
     if (refForm.current) {
-      refForm.current.addEventListener('submit', function(event) {
+      refForm.current.addEventListener('submit', function (event) {
         // Prevent the default form submission behavior
         event.preventDefault();
 
@@ -172,10 +178,17 @@ export default function Contato() {
    * Atualiza o link mailto com a entrada do usuário.
    */
   const alteracaoDadosMailto = () => {
-    const {mensagem, nome, assunto} = formData;
+    const { mensagem, nome, assunto } = formData;
 
-    const palavrasSudacoes = ['Olá, bom dia', 'Boa noite', 'Bom dia',
-      'Olá', 'Olá, tudo bem', 'Tudo bem', 'Boa tarde'];
+    const palavrasSudacoes = [
+      'Olá, bom dia',
+      'Boa noite',
+      'Bom dia',
+      'Olá',
+      'Olá, tudo bem',
+      'Tudo bem',
+      'Boa tarde',
+    ];
     let corpoEmail = '';
 
     for (let i = 0; i < palavrasSudacoes.length; i++) {
@@ -200,111 +213,139 @@ export default function Contato() {
 
   return (
     <section className="py-10 w-full flex flex-col justify-evenly items-center">
-      <div className='w-full items-start'>
-        <h4 className={`
+      <div className="w-full items-start">
+        <h4
+          className={`
           text-xl my-2 ml-4 md:text-[28px] md:ml-10 
            font-extralight
            text-custom-blue
            text-cente
            sm:text-[22px] ${domine.className}`}
-        >Contato</h4>
+        >
+          Contato
+        </h4>
       </div>
 
-      <form className="items-center flex h-auto justify-evenly w-full"
-        ref={refForm}>
-        <div className="items-center flex flex-col h-5/6
-         w-full sm:w-4/5 md:w-3/4 xl:w-1/2">
+      <form
+        className="items-center flex h-auto justify-evenly w-full"
+        ref={refForm}
+      >
+        <div
+          className="items-center flex flex-col h-5/6
+         w-full sm:w-4/5 md:w-3/4 xl:w-1/2"
+        >
           <div className="items-center flex flex-col mb-4 w-auto">
-            <h6 className={`
+            <h6
+              className={`
             bg-slate-900 rounded-xl 
             shadow-customShadow text-xl sm:text-2xl
             p-3 text-center w-auto
             left-auto absolute top-auto
             div__titulo
             ${domine.className}`}
-            > Entre em contato </h6>
+            >
+              {' '}
+              Entre em contato{' '}
+            </h6>
           </div>
-          <div className="
+          <div
+            className="
           bg-transparent border-[1.5px] w-11/12
           border-solid border-slate-700
           rounded-xl h-auto mt-4 ml-2 py-5 px-10
-          flex flex-col items-center">
-            <div className='flex flex-col h-auto my-3 w-11/12'>
+          flex flex-col items-center"
+          >
+            <div className="flex flex-col h-auto my-3 w-11/12">
               <label
                 htmlFor="assunto"
-                className={`${domine.className}`}>
-                Assunto</label>
+                className={`${domine.className}`}
+              >
+                Assunto
+              </label>
 
               <input
-                name="assunto" type='text'
+                name="assunto"
+                type="text"
                 ref={refAssunto}
                 data-tipo="assunto"
-                pattern='^[a-zA-Z\s]+$'
-                className='
+                pattern="^[a-zA-Z\s]+$"
+                className="
                 bg-transparent
                 border-b-[1.5px]
                h-8 mb-2 ml-3 w-auto border-solid
                text-base
                 focus:outline-none
                focus:px-0 py-1 focus:w-[102%] placeholder:text-slate-500
-                '
-                placeholder="Informe o assunto" required
+                "
+                placeholder="Informe o assunto"
+                required
                 title="O motivo não deve ter números ou caracteres especiais"
                 value={formData.assunto}
                 onChange={(e) =>
-                  setFormData({...formData, assunto: e.target.value})}
+                  setFormData({ ...formData, assunto: e.target.value })
+                }
               />
             </div>
-            <div className='flex flex-col h-auto w-11/12 my-3'>
+            <div className="flex flex-col h-auto w-11/12 my-3">
               <label
                 htmlFor="mensagem"
-                className={`${domine.className}`}>
-                Mensagem</label>
+                className={`${domine.className}`}
+              >
+                Mensagem
+              </label>
               <input
-                name="mensagem" type="text"
+                name="mensagem"
+                type="text"
                 ref={refMensagem}
                 data-tipo="mensagem"
-                id='div_mensagem'
-                pattern='^[a-zA-Z\s]+$'
-                className='
+                id="div_mensagem"
+                pattern="^[a-zA-Z\s]+$"
+                className="
                 bg-transparent
                 border-b-[1.5px]
                h-8 mb-2 ml-3 w-auto border-solid
                text-base
                 focus:outline-none
                focus:px-0 py-1 focus:w-[102%] placeholder:text-slate-500
-                '
-                placeholder="Digite sua mensagem" required
+                "
+                placeholder="Digite sua mensagem"
+                required
                 title="A mensagem não deve ter números ou caracteres especiais"
                 value={formData.mensagem}
                 onChange={(e) =>
-                  setFormData({...formData, mensagem: e.target.value})}
+                  setFormData({ ...formData, mensagem: e.target.value })
+                }
               />
             </div>
-            <div className='flex flex-col h-auto my-3 w-11/12'>
+            <div className="flex flex-col h-auto my-3 w-11/12">
               <label
                 htmlFor="nome"
-                className={`${domine.className}`}>
-                Nome</label>
+                className={`${domine.className}`}
+              >
+                Nome
+              </label>
               <input
-                name="nome" type="text"
+                name="nome"
+                type="text"
                 ref={refNome}
                 data-tipo="nome"
-                pattern='^[a-zA-Z\s]+$'
-                id='div__nome'
-                className='
+                pattern="^[a-zA-Z\s]+$"
+                id="div__nome"
+                className="
                 bg-transparent
                 border-b-[1.5px]
                h-8 mb-2 ml-3 w-auto border-solid
                text-base
                 focus:outline-none
                focus:px-0 py-1 focus:w-[102%] placeholder:text-slate-500
-                '
-                placeholder="Digite seu nome" required
+                "
+                placeholder="Digite seu nome"
+                required
                 title="O seu nome não deve ter números ou caracteres especiais"
                 value={formData.nome}
                 onChange={(e) =>
-                  setFormData({...formData, nome: e.target.value})}
+                  setFormData({ ...formData, nome: e.target.value })
+                }
               />
             </div>
             <a href="mailto:jose.leandro.nasciment@gmail.com">
@@ -317,8 +358,10 @@ export default function Contato() {
                     alteracaoDadosMailto();
                   }
                 }}
-                type='submit'
-              >Enviar</button>
+                type="submit"
+              >
+                Enviar
+              </button>
             </a>
           </div>
         </div>

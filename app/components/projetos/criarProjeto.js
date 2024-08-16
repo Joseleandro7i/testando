@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from 'react';
-import {Domine} from 'next/font/google';
+import React, { useEffect, useState } from 'react';
+import { Domine } from 'next/font/google';
 import PropTypes from 'prop-types';
-import {autoRespon} from '../../../lib/AutoRespon';
+import { autoRespon } from '../../../lib/AutoRespon';
+import Image from 'next/image';
 
 // eslint-disable-next-line new-cap
 const domine = Domine({
@@ -17,7 +18,7 @@ const domine = Domine({
  * @property {string} imgProjeto - A URL da imagem do projeto.
  * @property {string} nomeProjeto - O nome do projeto.
  * @property {string} urlRepositorio - A URL do repositório do projeto.
-  * @property {Object.<string, { caminho: string, alt: string }>}
+ * @property {Object.<string, { caminho: string, alt: string }>}
  * numerosImagens - As tecnologias utilizadas no projeto
  * com caminhos de imagem e textos alternativos.
  */
@@ -33,10 +34,10 @@ CriarProjetos.propTypes = {
     urlRepositorio: PropTypes.string.isRequired,
     textoDescricao: PropTypes.string.isRequired,
     numerosImagens: PropTypes.objectOf(
-        PropTypes.shape({
-          path: PropTypes.string.isRequired,
-          alt: PropTypes.string.isRequired,
-        }),
+      PropTypes.shape({
+        path: PropTypes.string.isRequired,
+        alt: PropTypes.string.isRequired,
+      }),
     ).isRequired,
   }).isRequired,
   state: PropTypes.bool.isRequired,
@@ -55,8 +56,12 @@ CriarProjetos.propTypes = {
  * handle project clicks.
  * @return {React.ReactElement} The rendered project component.
  */
-export default function CriarProjetos(
-    {dateCreateProject, state, handleClickProjeto, updateStateClicadoX}) {
+export default function CriarProjetos({
+  dateCreateProject,
+  state,
+  handleClickProjeto,
+  updateStateClicadoX,
+}) {
   const [estaVisivelProjeto, setEstaVisivelProjeto] = useState(false);
 
   /**
@@ -70,25 +75,31 @@ export default function CriarProjetos(
   useEffect(() => {
     if (dateCreateProject.idElemSuporte && dateCreateProject.idElemPosicionar) {
       autoRespon(
-          dateCreateProject.idElemSuporte, dateCreateProject.idElemPosicionar);
+        dateCreateProject.idElemSuporte,
+        dateCreateProject.idElemPosicionar,
+      );
     }
   }, [dateCreateProject]);
 
   return (
-    <div className={`h-auto w-auto flex-wrap 
+    <div
+      className={`h-auto w-auto flex-wrap 
     ${state ? 'flex flex-col items-center' : 'hidden'} mt-auto xl:mx-4 2xl:mx-0
-     justify-evenly items-start`}>
+     justify-evenly items-start`}
+    >
       <div
         className="flex flex-col justify-around w-auto h-auto my-6 items-start"
-        id={dateCreateProject.id}>
+        id={dateCreateProject.id}
+      >
         <div className="flex flex-col justify-evenly items-center h-auto">
           <div className="flex justify-center items-center h-auto w-full">
-            <img
+            <Image
               className="rounded-2xl border-[1.9px] border-solid
               border-custom-white w-[85%] h-44 md:w-[350px]
                md:h-52 xl:h-64 xl:w-[410px]"
               src={dateCreateProject.imgProjeto}
               id={dateCreateProject.idElemSuporte}
+              alt={'Img'}
             />
             <div
               className="items-center rounded-2xl flex flex-col h-44 w-[85%]
@@ -96,9 +107,11 @@ export default function CriarProjetos(
                top-auto xl:w-[410px] bg-dark-clear opacity-0 hover:opacity-100"
               id={dateCreateProject.idElemPosicionar}
             >
-              <h2 className={`py-1 px-3 sm:my-2 xl:ml-10 font-extralight 
+              <h2
+                className={`py-1 px-3 sm:my-2 xl:ml-10 font-extralight 
                 sm:px-6 bg-ligth-dark rounded-lg text-center sm:py-3 
-                shadow-customShadow ${domine.className}`}>
+                shadow-customShadow ${domine.className}`}
+              >
                 {dateCreateProject.nomeProjeto}
               </h2>
               <div className="flex justify-evenly w-full">
@@ -116,8 +129,9 @@ export default function CriarProjetos(
                   border-custom-white rounded-xl py-2 px-4 text-center
                   mx-2 text-white h-auto bg-ligth-dark hover:rounded-lg
                   active:rounded-md font-serif"
-                  onClick={
-                    () => window.open(dateCreateProject.urlDeploy, '_blank')}
+                  onClick={() =>
+                    window.open(dateCreateProject.urlDeploy, '_blank')
+                  }
                 >
                   Visualizar
                 </button>
@@ -126,9 +140,9 @@ export default function CriarProjetos(
                    border-custom-white rounded-xl py-2 px-4 text-center
                    mx-2 text-white h-auto bg-ligth-dark hover:rounded-lg
                    active:rounded-md font-serif"
-                  onClick={
-                    () => window.open(
-                        dateCreateProject.urlRepositorio, '_blank')}
+                  onClick={() =>
+                    window.open(dateCreateProject.urlRepositorio, '_blank')
+                  }
                 >
                   Repositório
                 </button>
@@ -136,9 +150,11 @@ export default function CriarProjetos(
             </div>
           </div>
 
-          <div className={`bg-transparent border-[1.9px] border-solid 
+          <div
+            className={`bg-transparent border-[1.9px] border-solid 
             border-custom-white rounded-xl p-6 text-center h-auto w-2/4 mt-16
-             ${estaVisivelProjeto ? 'visible' : 'hidden'}`}>
+             ${estaVisivelProjeto ? 'visible' : 'hidden'}`}
+          >
             <div className="flex flex-col w-auto h-auto items-end mb-2">
               <button
                 className="py-1 px-2 bg-transparent border-[1.9px]
@@ -157,23 +173,26 @@ export default function CriarProjetos(
             </p>
             <div className="h-32 flex flex-col justify-evenly">
               <div className="flex justify-evenly flex-col">
-                <h2 className={`my-2 ml-1 px-3 py-3 font-extralight w-2/4
-                   bg-ligth-dark rounded-xl text-center ${domine.className}`}>
+                <h2
+                  className={`my-2 ml-1 px-3 py-3 font-extralight w-2/4
+                   bg-ligth-dark rounded-xl text-center ${domine.className}`}
+                >
                   Tecnologias utilizadas
                 </h2>
               </div>
               <div className="flex justify-center px-2">
                 {dateCreateProject.numerosImagens &&
-                  Object.values(dateCreateProject.numerosImagens)
-                      .map((element, index) => (
-                        <img
-                          key={index}
-                          className="h-10 mx-5 w-10 border-[1.9px] border-solid
+                  Object.values(dateCreateProject.numerosImagens).map(
+                    (element, index) => (
+                      <Image
+                        key={index}
+                        className="h-10 mx-5 w-10 border-[1.9px] border-solid
                       border-custom-white rounded-xl"
-                          src={element.path}
-                          alt={element.alt}
-                        />
-                      ))}
+                        src={element.path}
+                        alt={element.alt}
+                      />
+                    ),
+                  )}
               </div>
             </div>
           </div>

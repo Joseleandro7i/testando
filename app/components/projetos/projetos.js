@@ -1,6 +1,6 @@
 'use client';
-import React, {useEffect, useState} from 'react';
-import {Domine} from 'next/font/google';
+import React, { useEffect, useState } from 'react';
+import { Domine } from 'next/font/google';
 import CriarProjetos from './criarProjeto';
 
 // eslint-disable-next-line new-cap
@@ -40,11 +40,11 @@ export default function Projetos() {
     Object.keys(newState).forEach((key) => {
       console.log(estaClicadoX);
       if (estaClicadoX) {
-        newState[key] = key === projectKey ?
-        !prevState[projectKey] : prevState[projectKey];
+        newState[key] =
+          key === projectKey ? !prevState[projectKey] : prevState[projectKey];
       } else {
-        newState[key] = key === projectKey ?
-        prevState[projectKey] : !prevState[projectKey];
+        newState[key] =
+          key === projectKey ? prevState[projectKey] : !prevState[projectKey];
       }
     });
 
@@ -54,10 +54,10 @@ export default function Projetos() {
   /**
    * Responsavel pelo os botão de visibilidade dos projetos.
    * @param {string} projectKey - A chave do projeto para alternar.
-      */
+   */
   const handleToggleVisibility = (projectKey) => {
     setEstaVisivel((prevState) => {
-      const newState = {...prevState};
+      const newState = { ...prevState };
       console.log(estaClicadoX);
 
       showNewSateForHandleToggleVisibility(newState);
@@ -66,31 +66,39 @@ export default function Projetos() {
 
   useEffect(() => {
     const projectKeys = [
-      'calculadora', 'gedf', 'reanotes', 'spotifyimersaofrontend'];
+      'calculadora',
+      'gedf',
+      'reanotes',
+      'spotifyimersaofrontend',
+    ];
     projectKeys.forEach((key) => {
       fetch(`http://localhost:8000/${key}`)
-          .then((response) => response.json())
-          .then((results) => {
-            const extractedData = results[0];
-            if (extractedData) {
-              setTemDadosProjetos((prevState) => ({
-                ...prevState,
-                [key]: extractedData,
-              }));
-            } else {
-              console.log(`Error: ${key} data is empty or null.`);
-            }
-          })
-          .catch((error) => {
-            console.error(`Error fetching ${key} data:`, error);
-          });
+        .then((response) => response.json())
+        .then((results) => {
+          const extractedData = results[0];
+          if (extractedData) {
+            setTemDadosProjetos((prevState) => ({
+              ...prevState,
+              [key]: extractedData,
+            }));
+          } else {
+            console.log(`Error: ${key} data is empty or null.`);
+          }
+        })
+        .catch((error) => {
+          console.error(`Error fetching ${key} data:`, error);
+        });
     });
   }, []);
 
   return (
-    <section className="w-full bg-dark py-10 rounded-md" id="projetos">
+    <section
+      className="w-full bg-dark py-10 rounded-md"
+      id="projetos"
+    >
       <div className="projeto__titulo">
-        <h5 className={`text-xl my-2 ml-4 md:text-[28px] md:ml-10 
+        <h5
+          className={`text-xl my-2 ml-4 md:text-[28px] md:ml-10 
           font-extralight
           text-custom-blue
           text-cente
@@ -101,7 +109,7 @@ export default function Projetos() {
       </div>
 
       <div className="flex justify-evenly items-start flex-wrap">
-        {Object.keys(temDadosProjetos).map((key) => (
+        {Object.keys(temDadosProjetos).map((key) =>
           temDadosProjetos[key] ? (
             <CriarProjetos
               key={key}
@@ -110,8 +118,10 @@ export default function Projetos() {
               updateStateClicadoX={updateStateClicadoX}
               handleClickProjeto={() => handleToggleVisibility(key)}
             />
-          ) : (console.log(`Error: ${key} data is not valid`))
-        ))}
+          ) : (
+            console.log(`Error: ${key} data is not valid`)
+          ),
+        )}
       </div>
     </section>
   );

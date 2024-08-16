@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Domine} from 'next/font/google';
+import { Domine } from 'next/font/google';
 
 // eslint-disable-next-line new-cap
 const domine = Domine({
@@ -16,17 +16,22 @@ export default function Formacoa() {
   return (
     <section className="bg-dark py-10 w-full">
       <div>
-        <h4 className={`
+        <h4
+          className={`
           text-xl my-2 ml-4 md:text-[28px] md:ml-10 
            font-extralight
            text-custom-blue
            text-cente
            sm:text-[22px] ${domine.className}`}
-        >Formações</h4>
+        >
+          Formações
+        </h4>
       </div>
 
-      <div className='flex justify-evenly flex-wrap flex-col
-        items-center lg:flex-row lg:items-start lg:justify-start'>
+      <div
+        className="flex justify-evenly flex-wrap flex-col
+        items-center lg:flex-row lg:items-start lg:justify-start"
+      >
         <Card
           title="Alura"
           content={`O ONE é um programa de educação e empregabilidade
@@ -97,20 +102,24 @@ export default function Formacoa() {
  * Card é um componente React que exibe um cartão com título e conteúdo.
  * @param {Object} props – As propriedades passadas para o componente.
  * @param {string} props.title – O título do cartão.
- * @param {string} props.content – ​O conteúdo do cartão.
+ * @param {string} props.content – o conteúdo do cartão.
  * com linhas separadas por caracteres de nova linha.
  * @return {ReactElement} O elemento do cartão renderizado.
  */
-function Card({title, content}) {
+function Card({ title, content }) {
   return (
-    <div className='w-10/12 lg:w-2/5 lg:mx-11 mx-1 mb-3 py-3'>
-      <h5 className={`text-[28px] my-2 w-11/12 font-extralight
-         text-center ${domine.className}`}>
+    <div className="w-10/12 lg:w-2/5 lg:mx-11 mx-1 mb-3 py-3">
+      <h5
+        className={`text-[28px] my-2 w-11/12 font-extralight
+         text-center ${domine.className}`}
+      >
         {title}
       </h5>
-      <p className="flex items-center bg-transparent border-[1px]
+      <p
+        className="flex items-center bg-transparent border-[1px]
        border-solid w-11/12 border-custom-white rounded-xl
-       flex-col justify-evenly mb-2 h-auto sm:ml-2 py-5 px-7">
+       flex-col justify-evenly mb-2 h-auto sm:ml-2 py-5 px-7"
+      >
         {content.split('\n').map((line, index) => (
           <React.Fragment key={index}>
             {line}

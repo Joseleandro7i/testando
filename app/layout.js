@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
  * @param {ReactNode} props.children - The content to render within the layout.
  * @return {ReactElement} The rendered layout element.
  */
-function RootLayout({children}) {
+function RootLayout({ children }) {
   return <div>{children}</div>;
 }
 

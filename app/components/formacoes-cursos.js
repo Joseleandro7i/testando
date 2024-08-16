@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Domine} from 'next/font/google';
+import { Domine } from 'next/font/google';
+import Image from 'next/image';
 
 // eslint-disable-next-line new-cap
 const domine = Domine({
@@ -17,25 +18,42 @@ const domine = Domine({
  * @param {Array<string>} props.courses - A lista de cursos realizados.
  * @return {React.ReactElement} Renderiza o card de um curso.
  */
-const CourseCard = ({imageSrc, title, date, courses}) => (
-  <div className="flex items-center bg-transparent border-[1px]
+const CourseCard = ({ imageSrc, title, date, courses }) => (
+  <div
+    className="flex items-center bg-transparent border-[1px]
    border-solid border-custom-white rounded-xl flex-col
-   justify-evenly mb-2 w-11/12 ml-2 py-5 px-7">
-
-    <img className="w-16 mb-2" src={imageSrc} alt={title} />
-    <h1 className={`mb-2 text-xl sm:text-[18px] 
-    ${domine.className}`}>{title}</h1>
+   justify-evenly mb-2 w-11/12 ml-2 py-5 px-7"
+  >
+    <Image
+      className="w-16 mb-2"
+      src={imageSrc}
+      alt={title}
+    />
+    <h1
+      className={`mb-2 text-xl sm:text-[18px] 
+    ${domine.className}`}
+    >
+      {title}
+    </h1>
 
     <h2 className="mb-3">Concluído em {date}</h2>
 
     <div className="flex flex-col items-center mt-3">
-      <h2 className={`mb-2 text-lg sm:text-[18px] 
-      ${domine.className}`}>Cursos realizados</h2>
+      <h2
+        className={`mb-2 text-lg sm:text-[18px] 
+      ${domine.className}`}
+      >
+        Cursos realizados
+      </h2>
 
       <ul className="h-auto flex flex-col justify-evenly">
         {courses.map((course, index) => (
-          <li key={index}
-            className={index % 2 === 0 ? '' : 'py-3'}>{course}</li>
+          <li
+            key={index}
+            className={index % 2 === 0 ? '' : 'py-3'}
+          >
+            {course}
+          </li>
         ))}
       </ul>
     </div>
@@ -57,15 +75,20 @@ CourseCard.propTypes = {
 const FormacoesCursos = () => (
   <section className="h-auto w-full py-7">
     <div>
-      <h4 className={`text-xl my-2 ml-4 md:text-[28px] md:ml-10 
+      <h4
+        className={`text-xl my-2 ml-4 md:text-[28px] md:ml-10 
           font-extralight
           text-custom-blue
           text-cente
-          sm:text-[22px] ${domine.className}`}>
-        Formações e Cursos</h4>
+          sm:text-[22px] ${domine.className}`}
+      >
+        Formações e Cursos
+      </h4>
     </div>
-    <div className="content-around items-start
-    justify-evenly flex w-full h-auto py-5">
+    <div
+      className="content-around items-start
+    justify-evenly flex w-full h-auto py-5"
+    >
       <div className="items-center justify-evenly flex flex-col h-auto">
         <CourseCard
           imageSrc="img/front-end.png"
@@ -94,8 +117,10 @@ const FormacoesCursos = () => (
           imageSrc="img/inteligência-artificial.png"
           title="Career Essentials in Generative AI Microsoft and LinkedIn"
           date="27 de setembro de 2023"
-          courses={['Ethics in the Age of Generative AI',
-            'What Is Generative AI?']}
+          courses={[
+            'Ethics in the Age of Generative AI',
+            'What Is Generative AI?',
+          ]}
         />
         <CourseCard
           imageSrc="img/agile.png"

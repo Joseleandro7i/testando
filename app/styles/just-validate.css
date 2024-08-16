@@ -1,13 +1,13 @@
 .div__label-error {
-    color: #86a8db;
-    margin-left: 12px;
-    margin-bottom: 1em;
+  color: #86a8db;
+  margin-left: 12px;
+  margin-bottom: 1em;
 }
 
 .div__input {
-    border-bottom-color: #992929;
+  border-bottom-color: #992929;
 }
 
 .div__input:focus {
-    border-bottom-color: #992929;
+  border-bottom-color: #992929;
 }

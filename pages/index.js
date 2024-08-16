@@ -25,7 +25,8 @@ export default function Index() {
           Meu portfólio destaca os projetos que desenvolvi,
           demonstrando minhas habilidades e conhecimentos
           em tecnologias modernas como
-          React.js, Next.js, Tailwind CSS, entre outras." />
+          React.js, Next.js, Tailwind CSS, entre outras."
+        />
       </Head>
       <main className="flex justify-evenly items-center flex-col">
         <Apresentacao />
@@ -36,7 +37,7 @@ export default function Index() {
         <Contato />
       </main>
 
-      <footer className='h-40'>
+      <footer className="h-40">
         <Footer />
       </footer>
     </>

@@ -1,82 +1,114 @@
 {
-    "calculadora": [
-      { 
-        "idElemPosicionar": "DescricaoCalculadora",
-        "idElemSuporte": "ImgCalculadora",
-        "nomeProjeto": "Calculadora OES",
-        "urlDeploy": "https://calculadora-oes.vercel.app/",
-        "urlRepositorio": "https://github.com/Jose-leandro/Calculadora-OES",
-        "imgProjeto": "img/calculadoraoes.png",
-        "textoDescricao": "Calculadora OES é a ferramenta que tornará seus cálculos matemáticos simples e eficientes. Imagine-se em uma jornada descomplicada, onde as operações se tornam tão intuitivas quanto navegar na internet. Com uma interface e design simples, mas funcional, ela oferece o que você precisa para realizar suas operações matemáticas fundamentais.\n\nReconheço que, atualmente, a Calculadora OES pode parecer simples e conter alguns pequenos erros. No entanto, estou empolgado em anunciar que tenho grandes planos. Em breve, esta calculadora se transformará em algo incrível, com funcionalidades aprimoradas, uma interface ainda mais intuitiva e, é claro, menos bugs. Estou comprometido em evoluir continuamente para proporcionar a melhor experiência possível para você na realização de seus cálculos.",
-        "numerosImagens": {
-          "img1": {"path": "img/react.png", "alt": "Logo da tecnologia react.js"},
-          "img2": {"path": "img/nodejs.png", "alt": "Logo da tecnologia node.js"},
-          "img3": {"path": "img/javascript.png", "alt": "Logo da tecnologia javascript"},
-          "img4": {"path": "img/html.png", "alt": "Logo da tecnologia html"},
-          "img5": {"path": "img/css.png", "alt": "Logo da tecnologia css"},
-          "img6": {"path": "img/git.png", "alt": "Logo da tecnologia git"},
-          "img7": {"path": "img/github.png", "alt": "Logo da tecnologia github"}
-        }
+  "calculadora": [
+    {
+      "idElemPosicionar": "DescricaoCalculadora",
+      "idElemSuporte": "ImgCalculadora",
+      "nomeProjeto": "Calculadora OES",
+      "urlDeploy": "https://calculadora-oes.vercel.app/",
+      "urlRepositorio": "https://github.com/Jose-leandro/Calculadora-OES",
+      "imgProjeto": "img/calculadoraoes.png",
+      "textoDescricao": "Calculadora OES é a ferramenta que tornará seus cálculos matemáticos simples e eficientes. Imagine-se em uma jornada descomplicada, onde as operações se tornam tão intuitivas quanto navegar na internet. Com uma interface e design simples, mas funcional, ela oferece o que você precisa para realizar suas operações matemáticas fundamentais.\n\nReconheço que, atualmente, a Calculadora OES pode parecer simples e conter alguns pequenos erros. No entanto, estou empolgado em anunciar que tenho grandes planos. Em breve, esta calculadora se transformará em algo incrível, com funcionalidades aprimoradas, uma interface ainda mais intuitiva e, é claro, menos bugs. Estou comprometido em evoluir continuamente para proporcionar a melhor experiência possível para você na realização de seus cálculos.",
+      "numerosImagens": {
+        "img1": {
+          "path": "img/react.png",
+          "alt": "Logo da tecnologia react.js"
+        },
+        "img2": {
+          "path": "img/nodejs.png",
+          "alt": "Logo da tecnologia node.js"
+        },
+        "img3": {
+          "path": "img/javascript.png",
+          "alt": "Logo da tecnologia javascript"
+        },
+        "img4": { "path": "img/html.png", "alt": "Logo da tecnologia html" },
+        "img5": { "path": "img/css.png", "alt": "Logo da tecnologia css" },
+        "img6": { "path": "img/git.png", "alt": "Logo da tecnologia git" },
+        "img7": { "path": "img/github.png", "alt": "Logo da tecnologia github" }
       }
-    ],
-    "gedf": [
-      { 
-        "idElemPosicionar": "DescricaoGedf",
-        "idElemSuporte": "ImgGedf",
-        "nomeProjeto": "Gerenciador Finaceiro Gedf",
-        "urlDeploy": "https://gerenciador-financeiro-gedf.vercel.app/",
-        "urlRepositorio": "https://github.com/Jose-leandro/Gerenciador-Financeiro-Gedf",
-        "imgProjeto": "img/gedf.png",
-        "textoDescricao": "O Gedf é um gerenciador financeiro completo e intuitivo que irá transformar a forma como você gerencia suas finanças.",
-        "numerosImagens": {
-          "img1": {"path": "img/react.png", "alt": "Logo da tecnologia react.js"},
-          "img3": {"path": "img/javascript.png", "alt": "Logo da tecnologia javascript"},
-          "img4": {"path": "img/html.png", "alt": "Logo da tecnologia html"},
-          "img5": {"path": "img/css.png", "alt": "Logo da tecnologia css"},
-          "img6": {"path": "img/git.png", "alt": "Logo da tecnologia git"},
-          "img7": {"path": "img/github.png", "alt": "Logo da tecnologia github"}
-        }
+    }
+  ],
+  "gedf": [
+    {
+      "idElemPosicionar": "DescricaoGedf",
+      "idElemSuporte": "ImgGedf",
+      "nomeProjeto": "Gerenciador Finaceiro Gedf",
+      "urlDeploy": "https://gerenciador-financeiro-gedf.vercel.app/",
+      "urlRepositorio": "https://github.com/Jose-leandro/Gerenciador-Financeiro-Gedf",
+      "imgProjeto": "img/gedf.png",
+      "textoDescricao": "O Gedf é um gerenciador financeiro completo e intuitivo que irá transformar a forma como você gerencia suas finanças.",
+      "numerosImagens": {
+        "img1": {
+          "path": "img/react.png",
+          "alt": "Logo da tecnologia react.js"
+        },
+        "img3": {
+          "path": "img/javascript.png",
+          "alt": "Logo da tecnologia javascript"
+        },
+        "img4": { "path": "img/html.png", "alt": "Logo da tecnologia html" },
+        "img5": { "path": "img/css.png", "alt": "Logo da tecnologia css" },
+        "img6": { "path": "img/git.png", "alt": "Logo da tecnologia git" },
+        "img7": { "path": "img/github.png", "alt": "Logo da tecnologia github" }
       }
-    ],
-    "reanotes": [
-      { 
-        "idElemPosicionar": "DescricaoReanotes",
-        "idElemSuporte": "ImgReanotes",
-        "nomeProjeto": "ReaNotes",
-        "urlDeploy": "https://rea-notes.vercel.app/",
-        "urlRepositorio": "https://github.com/Jose-leandro/ReaNotes",
-        "imgProjeto": "img/reanotes.png",
-        "textoDescricao": "O ReaNotes é mais do que um aplicativo de notas, é a sua ferramenta pessoal para capturar e organizar suas ideias. Experimente e explore o ReaNotes e descubra uma nova maneira de registrar suas notas!",
-        "numerosImagens": {
-          "img1": {"path": "img/vitejs.png", "alt": "Logo do framework Vite.js"},
-          "img2": {"path": "img/react.png", "alt": "Logo da tecnologia react.js"},
-          "img3": {"path": "img/typescript.png", "alt": "Logo da tecnologia TypeScript"},
-          "img4": {"path": "img/javascript.png", "alt": "Logo da tecnologia javascript"},
-          "img5": {"path": "img/sass.png", "alt": "Logo do pré-processadores css conhecido como Sass"},
-          "img6": {"path": "img/html.png", "alt": "Logo da tecnologia html"},
-          "img7": {"path": "img/css.png", "alt": "Logo da tecnologia css"},
-          "img8": {"path": "img/git.png", "alt": "Logo da tecnologia git"},
-          "img9": {"path": "img/github.png", "alt": "Logo da tecnologia github"}
-        }
+    }
+  ],
+  "reanotes": [
+    {
+      "idElemPosicionar": "DescricaoReanotes",
+      "idElemSuporte": "ImgReanotes",
+      "nomeProjeto": "ReaNotes",
+      "urlDeploy": "https://rea-notes.vercel.app/",
+      "urlRepositorio": "https://github.com/Jose-leandro/ReaNotes",
+      "imgProjeto": "img/reanotes.png",
+      "textoDescricao": "O ReaNotes é mais do que um aplicativo de notas, é a sua ferramenta pessoal para capturar e organizar suas ideias. Experimente e explore o ReaNotes e descubra uma nova maneira de registrar suas notas!",
+      "numerosImagens": {
+        "img1": {
+          "path": "img/vitejs.png",
+          "alt": "Logo do framework Vite.js"
+        },
+        "img2": {
+          "path": "img/react.png",
+          "alt": "Logo da tecnologia react.js"
+        },
+        "img3": {
+          "path": "img/typescript.png",
+          "alt": "Logo da tecnologia TypeScript"
+        },
+        "img4": {
+          "path": "img/javascript.png",
+          "alt": "Logo da tecnologia javascript"
+        },
+        "img5": {
+          "path": "img/sass.png",
+          "alt": "Logo do pré-processadores css conhecido como Sass"
+        },
+        "img6": { "path": "img/html.png", "alt": "Logo da tecnologia html" },
+        "img7": { "path": "img/css.png", "alt": "Logo da tecnologia css" },
+        "img8": { "path": "img/git.png", "alt": "Logo da tecnologia git" },
+        "img9": { "path": "img/github.png", "alt": "Logo da tecnologia github" }
       }
-    ],
-    "spotifyimersaofrontend": [
-      { 
-        "idElemPosicionar": "DescricaoSpotifyImersao",
-        "idElemSuporte": "ImgSpotifyImersao",
-        "nomeProjeto": "Spotify Imersão Front-end",
-        "urlDeploy": "https://spotify-imersao-front-end-jose-leandro.vercel.app/",
-        "urlRepositorio": "https://github.com/Jose-leandro/Spotify-Imersao-Front-End",
-        "imgProjeto": "img/spotify-imersao-front-end.png",
-        "textoDescricao": "Este projeto é uma inspiração ao Spotify, um dos gigantes globais no universo do streaming de música. A meta era construir uma página inicial que capturasse a essência vibrante e dinâmica do Spotify. Este desafio foi realizado durante a imersão Front-End da Alura, uma experiência que me permitiu aprofundar e aprimorar minhas habilidades.",
-        "numerosImagens": {
-          "img3": {"path": "img/javascript.png", "alt": "Logo da tecnologia javascript"},
-          "img4": {"path": "img/html.png", "alt": "Logo da tecnologia html"},
-          "img5": {"path": "img/css.png", "alt": "Logo da tecnologia css"},
-          "img6": {"path": "img/git.png", "alt": "Logo da tecnologia git"},
-          "img7": {"path": "img/github.png", "alt": "Logo da tecnologia github"}
-        }
+    }
+  ],
+  "spotifyimersaofrontend": [
+    {
+      "idElemPosicionar": "DescricaoSpotifyImersao",
+      "idElemSuporte": "ImgSpotifyImersao",
+      "nomeProjeto": "Spotify Imersão Front-end",
+      "urlDeploy": "https://spotify-imersao-front-end-jose-leandro.vercel.app/",
+      "urlRepositorio": "https://github.com/Jose-leandro/Spotify-Imersao-Front-End",
+      "imgProjeto": "img/spotify-imersao-front-end.png",
+      "textoDescricao": "Este projeto é uma inspiração ao Spotify, um dos gigantes globais no universo do streaming de música. A meta era construir uma página inicial que capturasse a essência vibrante e dinâmica do Spotify. Este desafio foi realizado durante a imersão Front-End da Alura, uma experiência que me permitiu aprofundar e aprimorar minhas habilidades.",
+      "numerosImagens": {
+        "img3": {
+          "path": "img/javascript.png",
+          "alt": "Logo da tecnologia javascript"
+        },
+        "img4": { "path": "img/html.png", "alt": "Logo da tecnologia html" },
+        "img5": { "path": "img/css.png", "alt": "Logo da tecnologia css" },
+        "img6": { "path": "img/git.png", "alt": "Logo da tecnologia git" },
+        "img7": { "path": "img/github.png", "alt": "Logo da tecnologia github" }
       }
-    ]
-  }
-  
+    }
+  ]
+}

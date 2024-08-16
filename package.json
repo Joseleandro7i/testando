@@ -1,18 +1,30 @@
 {
   "name": "portfolio",
-  "version": "0.0.3",
-  "description": "",
+  "version": "0.0.4",
+  "description": "Hello, and welcome to my portfolio! Think of it as a spotlight on a stage, where I showcase my brightest projects, technical skills, and personal strengths. But this stage also reveals more about who I am—my hobbies, passions, interests, and aspirations.",
+  "keywords": [
+    "portfolio",
+    "web development",
+    "react",
+    "tailwind css",
+    "next.js"
+  ],
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env PORT=${PORT:-4000} next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "json-server": "json-server --watch api-projetos/projetos.json --port 8000",
-    "start-vercel": "npm run dev && npm run json-server"
+    "check-updates": "npx npm-check-updates",
+    "json-server": "json-server --watch api-projetos/projetos.json --port ${JSON_PORT:-8000}",
+    "start-vercel": "concurrently \"npm run dev\" \"npm run json-server\"",
+    "prepare": "husky"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "repository": {
-    "type": "git",
+    "type": "GitHub",
     "url": "git+https://github.com/Jose-leandro/Portfolio.git"
   },
   "author": "José leandro",
@@ -28,8 +40,24 @@
     "sonner": "^1.4.41"
   },
   "devDependencies": {
+    "@eslint/config-array": "^0.18.0",
+    "@eslint/object-schema": "^2.1.4",
     "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.5",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-promise": "^7.1.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "glob": "^11.0.0",
+    "globals": "^15.9.0",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.9",
     "postcss": "^8.4.38",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
     "tailwindcss": "^3.4.3"
   }
 }

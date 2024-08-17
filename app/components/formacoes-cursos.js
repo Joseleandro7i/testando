@@ -28,6 +28,8 @@ const CourseCard = ({ imageSrc, title, date, courses }) => (
       className="w-16 mb-2"
       src={imageSrc}
       alt={title}
+      layout="fill"
+      objectFit="contain"
     />
     <h1
       className={`mb-2 text-xl sm:text-[18px] 
@@ -91,7 +93,7 @@ const FormacoesCursos = () => (
     >
       <div className="items-center justify-evenly flex flex-col h-auto">
         <CourseCard
-          imageSrc="img/front-end.png"
+          imageSrc="/img/front-end.png"
           title="Desenvolvimento Front End - ONE"
           date="30 de setembro de 2022"
           courses={[
@@ -106,7 +108,7 @@ const FormacoesCursos = () => (
           ]}
         />
         <CourseCard
-          imageSrc="img/banco-de-dados.png"
+          imageSrc="/img/banco-de-dados.png"
           title="SQL com MySQL Server da Oracle - ONE"
           date="11 de dezembro de 2022"
           courses={['Consultas SQL: Avançando No SQL Com MYSQL']}
@@ -114,7 +116,7 @@ const FormacoesCursos = () => (
       </div>
       <div className="items-center justify-evenly flex flex-col h-auto">
         <CourseCard
-          imageSrc="img/inteligência-artificial.png"
+          imageSrc="/img/inteligência-artificial.png"
           title="Career Essentials in Generative AI Microsoft and LinkedIn"
           date="27 de setembro de 2023"
           courses={[
@@ -123,7 +125,7 @@ const FormacoesCursos = () => (
           ]}
         />
         <CourseCard
-          imageSrc="img/agile.png"
+          imageSrc="/img/agile.png"
           title="Business Agility - ONE"
           date="20 de setembro de 2022"
           courses={[
@@ -132,7 +134,7 @@ const FormacoesCursos = () => (
           ]}
         />
         <CourseCard
-          imageSrc="img/soft-skills.png"
+          imageSrc="/img/soft-skills.png"
           title="Desenvolvimento Pessoal - ONE"
           date="27 de setembro de 2022"
           courses={[

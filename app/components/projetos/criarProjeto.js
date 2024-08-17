@@ -100,6 +100,8 @@ export default function CriarProjetos({
               src={dateCreateProject.imgProjeto}
               id={dateCreateProject.idElemSuporte}
               alt={'Img'}
+              layout="fill"
+              objectFit="contain"
             />
             <div
               className="items-center rounded-2xl flex flex-col h-44 w-[85%]
@@ -186,7 +188,9 @@ export default function CriarProjetos({
                     (element, index) => (
                       <Image
                         key={index}
-                        className="h-10 mx-5 w-10 border-[1.9px] border-solid
+                        layout="fill"
+                        objectFit="contain"
+                        className="h-10 mx-5 border-[1.9px] border-solid
                       border-custom-white rounded-xl"
                         src={element.path}
                         alt={element.alt}

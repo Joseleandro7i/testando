@@ -19,7 +19,9 @@ const domine = Domine({
  */
 const ProfileImage = ({ src, alt }) => (
   <Image
-    className="rounded-full h-28 md:h-36 mt-2"
+    width={100}
+    height={112}
+    className="rounded-full md:h-36 mt-2"
     src={src}
     alt={alt}
   />
@@ -42,6 +44,8 @@ ProfileImage.propTypes = {
 const SocialLink = ({ href, src, alt }) => (
   <a href={href}>
     <Image
+      width={28}
+      height={28}
       src={src}
       alt={alt}
       className="w-7 sm:w-8 cursor-pointer hover:h-[35px]
@@ -92,7 +96,7 @@ export default function Apresentacao() {
         justify-evenly rounded-full h-350 w-full"
         >
           <ProfileImage
-            src="img/Foto - José leandro.png"
+            src="/img/Foto - José leandro.png"
             alt="Foto do desenvolvedor do site José Leandro"
           />
           <HeaderText>Olá, tudo bem, Meu nome é José Leandro</HeaderText>
@@ -106,12 +110,12 @@ export default function Apresentacao() {
           <div className="flex h-12 justify-evenly">
             <SocialLink
               href="https://github.com/Jose-leandro"
-              src="img/github.png"
+              src="/img/github.png"
               alt="GitHub"
             />
             <SocialLink
               href="https://linkedin.com/in/jose-leandro"
-              src="img/linkedin.png"
+              src="/img/linkedin.png"
               alt="LinkedIn"
             />
           </div>

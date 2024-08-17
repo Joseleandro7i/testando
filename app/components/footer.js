@@ -15,6 +15,8 @@ export default function Footer() {
           className="mt-2 mb-3"
           src="/img/logo.png"
           alt="Foto do desenvolvedor do site josé leandro"
+          layout="fill"
+          objectFit="contain"
         />
         <p className="px-2">
           &copy; Construido e desenvolvido por José leandro do nascimento

@@ -20,17 +20,17 @@ const skillsList = [
 ];
 
 const logos = [
-  { src: 'img/git.png', alt: 'Logo do sistema de controle de versão Git' },
-  { src: 'img/html.png', alt: 'Logo da linguagem de marcação HTML' },
-  { src: 'img/css.png', alt: 'Logo da linguagem de estilos CSS' },
-  { src: 'img/sass.png', alt: 'Logo do pré-processador Sass' },
+  { src: '/img/git.png', alt: 'Logo do sistema de controle de versão Git' },
+  { src: '/img/html.png', alt: 'Logo da linguagem de marcação HTML' },
+  { src: '/img/css.png', alt: 'Logo da linguagem de estilos CSS' },
+  { src: '/img/sass.png', alt: 'Logo do pré-processador Sass' },
   {
-    src: 'img/javascript.png',
+    src: '/img/javascript.png',
     alt: 'Logo da linguagem de programação JavaScript',
   },
-  { src: 'img/react.png', alt: 'Logo da biblioteca React' },
-  { src: 'img/sql.png', alt: 'Logo da linguagem de programação SQL' },
-  { src: 'img/mysql.png', alt: 'Logo do banco de dados MySQL' },
+  { src: '/img/react.png', alt: 'Logo da biblioteca React' },
+  { src: '/img/sql.png', alt: 'Logo da linguagem de programação SQL' },
+  { src: '/img/mysql.png', alt: 'Logo do banco de dados MySQL' },
 ];
 
 /**
@@ -63,6 +63,8 @@ const LogoItem = ({ src, alt }) => (
   <Image
     src={src}
     alt={alt}
+    layout="fill"
+    objectFit="contain"
     className="border-[1px] border-solid border-custom-white
      rounded-xl mt-2 p-3 text-center w-auto ml-2"
   />
@@ -116,6 +118,8 @@ const Skills = () => (
             key={index}
             src={logo.src}
             alt={logo.alt}
+            layout="fill"
+            objectFit="contain"
           />
         ))}
       </div>

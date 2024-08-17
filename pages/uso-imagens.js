@@ -48,6 +48,8 @@ const UsoImagens = () => {
                 src={icon.imgSrc}
                 className="px-2 my-2"
                 alt={icon.name}
+                layout="fill"
+                objectFit="contain"
               />
 
               <div className="w-full flex flex-col text-center">
@@ -76,6 +78,8 @@ const UsoImagens = () => {
         <footer className="h-auto px-4 my-4 w-full flex flex-col items-center">
           <Image
             className="mt-2 mb-3"
+            layout="fill"
+            objectFit="contain"
             src="/img/logo.png"
             alt="Foto do desenvolvedor do site josé leandro"
           />
@@ -98,27 +102,27 @@ export default UsoImagens;
  */
 const iconsData = [
   {
-    imgSrc: 'img/agile.png',
+    imgSrc: '/img/agile.png',
     name: 'Agile',
     link: 'https://icons8.com/icon/TSLsIg7ynVZR/agile',
   },
   {
-    imgSrc: 'img/banco-de-dados.png',
+    imgSrc: '/img/banco-de-dados.png',
     name: 'Banco de dados',
     link: 'https://icons8.com/icon/gTX71N9d3nWR/banco-de-dados',
   },
   {
-    imgSrc: 'img/css.png',
+    imgSrc: '/img/css.png',
     name: 'Css',
     link: 'https://www.flaticon.com/br/icones-gratis/css',
   },
   {
-    imgSrc: 'img/front-end.png',
+    imgSrc: '/img/front-end.png',
     name: 'Front End',
     link: 'https://icons8.com/icon/dhecLjnptiQg/front-end',
   },
   {
-    imgSrc: 'img/git.png',
+    imgSrc: '/img/git.png',
     name: 'Git',
     link: 'https://icons8.com/icon/20906/git',
   },
@@ -128,52 +132,52 @@ const iconsData = [
     link: 'https://icons8.com/icon/16318/github',
   },
   {
-    imgSrc: 'img/inteligência-artificial.png',
+    imgSrc: '/img/inteligência-artificial.png',
     name: 'Inteligência artificial',
     link: 'https://icons8.com/icon/UhSB60MHvQFR/intelig%C3%AAncia-artificial',
   },
   {
-    imgSrc: 'img/linkedin.png',
+    imgSrc: '/img/linkedin.png',
     name: 'LinkedIn',
     link: 'https://icons8.com/icon/xuvGCOXi8Wyg/linkedin',
   },
   {
-    imgSrc: 'img/mysql.png',
+    imgSrc: '/img/mysql.png',
     name: 'mysql',
     link: 'https://icons8.com/icon/UFXRpPFebwa2/logo-mysql',
   },
   {
-    imgSrc: 'img/react.png',
+    imgSrc: '/img/react.png',
     name: 'Nativo de reagir',
     link: 'https://icons8.com/icon/123603/nativo-de-reagir',
   },
   {
-    imgSrc: 'img/sass.png',
+    imgSrc: '/img/sass.png',
     name: 'atrevimento',
     link: 'https://icons8.com/icon/QBqFNfPPB2Kx/atrevimento',
   },
   {
-    imgSrc: 'img/soft-skills.png',
+    imgSrc: '/img/soft-skills.png',
     name: 'Soft Skills',
     link: 'https://icons8.com/icon/Fs48AhL7WFOF/soft-skills',
   },
   {
-    imgSrc: 'img/sql.png',
+    imgSrc: '/img/sql.png',
     name: 'Sql',
     link: 'https://icons8.com/icon/vAJD4bPPf091/sql',
   },
   {
-    imgSrc: 'img/tailwindcss.png',
+    imgSrc: '/img/tailwindcss.png',
     name: 'tailwindcss',
     link: 'https://icons8.com/icon/CIAZz2CYc6Kc/tailwindcss',
   },
   {
-    imgSrc: 'img/html.png',
+    imgSrc: '/img/html.png',
     name: 'Html',
     link: 'https://www.flaticon.com/br/icones-gratis/html',
   },
   {
-    imgSrc: 'img/javascript.png',
+    imgSrc: '/img/javascript.png',
     name: 'Javascript',
     link: 'https://www.flaticon.com/br/icones-gratis/javascript',
   },

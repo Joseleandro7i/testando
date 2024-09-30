@@ -1,5 +1,5 @@
 
-![Portfólio - José leandro](https://github.com/Jose-leandro/portfolio-joseleandro/assets/104599482/fbaa81b4-ce38-495b-9445-6cc1faf39cd8)
+![Portfólio - José leandro](https://github.com/user-attachments/assets/2613ae8c-8569-4487-b4ca-8d5ecd88fc50)
 
 ### Descrição do projeto
 

@@ -1,14 +1,47 @@
 
 ![Portfólio - José leandro](https://github.com/user-attachments/assets/2613ae8c-8569-4487-b4ca-8d5ecd88fc50)
 
-### Descrição do projeto
+# Welcome to My Portfolio 🌟
+ ![GitHub release (latest by date)](https://img.shields.io/github/v/release/jose-leandro/Portfolio)
+![GitHub issues](https://img.shields.io/github/issues/jose-leandro/Portfolio)
+![GitHub](https://img.shields.io/github/license/jose-leandro/Portfolio)
 
- <p>Olá, seja bem-vindo ao meu portfólio! O imagine como um palco iluminado, onde apresento a você, meus projetos mais brilhantes, minhas habilidades técnicas e minhas competências pessoais, mas neste palco também exibo e revelo um pouco mais sobre quem eu sou - meus hobbies, meus desejos, meus interesses e meus objetivos.
+## 🎯 Project Overview
 
-Navegue e descubra os projetos que desenvolvi, cada um deles uma oportunidade para aprender e dominar diferentes tecnologias. Você também encontrará detalhes sobre minha formação acadêmica, cursos realizados e muito mais. 
+Hello, welcome to my portfolio! Imagine it as a bright stage where I present to you my most brilliant projects, my technical skills and my personal competencies, but on this stage I also display and reveal a little more about who I am - my hobbies, my desires, my interests and my goals.
 
-O meu propósito é demonstrar o meu potencial e  uma visão do que anseio me tornar no futuro, espero que você goste do meu portfólio e que ele te inspire de alguma forma.
-</p>
+Browse and discover the projects I have developed, each of them an opportunity to learn and master different technologies. You will also find details about my academic background, courses taken and much more.
+
+My purpose is to demonstrate my potential and a vision of what I aspire to become in the future, I hope you enjoy my portfolio and that it inspires you in some way.
+
+## 🔧 Key Focus Areas
+
+**♿ Accessibility:** Prioritizing inclusivity by ensuring web accessibility for users of all abilities.
+
+**🎨 UI/UX Design:** Crafting engaging, user-centric interfaces that enhance both functionality and aesthetics.
+
+**🛠️ Tailwind CSS:** Utilizing utility-first CSS to streamline responsive, scalable, and maintainable design systems.
+
+**💻 JavaScript & React.js:** Building dynamic, high-performance web applications with modern JavaScript and the React ecosystem.
+
+**🚀 Next.js:** Leveraging server-side rendering and static site generation to create fast, SEO-friendly applications.
+
+**📏 Clean Code:** Writing clean, maintainable, and efficient code that aligns with industry best practices.
+
+**⚡ Performance Optimization:** Enhancing user experience by optimizing web performance and reducing load times.
+
+**🔄 Git Flow:** Efficiently managing code versioning and collaboration through Git Flow practices.
+
+**📱 Responsive Design:** Developing adaptable layouts that provide a seamless experience across mobile, tablet, and desktop devices.
+
+**🔗 jQuery:** Integrating jQuery where necessary to manipulate the DOM and manage events efficiently.
+
+**🐞 Debugging:** Ensuring robust and bug-free applications through comprehensive debugging and testing techniques.
+
+**📝 Documentation:** Maintaining clear and detailed documentation for future development and team collaboration.
+
+**🏛️ Clean Architecture:** Structuring projects with clean architecture principles, ensuring scalability and long-term maintainability.
+
 
 ### Estado do projeto
  

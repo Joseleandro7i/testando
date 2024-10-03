@@ -63,10 +63,10 @@ const LogoItem = ({ src, alt }) => (
   <Image
     src={src}
     alt={alt}
-    layout="fill"
-    objectFit="contain"
+    width={60}
+    height={50}    
     className="border-[1px] border-solid border-custom-white
-     rounded-xl mt-2 p-3 text-center w-auto ml-2"
+     rounded-xl mt-2 p-3 text-center ml-2"
   />
 );
 
@@ -118,8 +118,6 @@ const Skills = () => (
             key={index}
             src={logo.src}
             alt={logo.alt}
-            layout="fill"
-            objectFit="contain"
           />
         ))}
       </div>

@@ -28,9 +28,9 @@ const CourseCard = ({ imageSrc, title, date, courses }) => (
       className="w-16 mb-2"
       src={imageSrc}
       alt={title}
-      layout="fill"
-      objectFit="contain"
-    />
+      width={64}
+      height={64}    
+      />
     <h1
       className={`mb-2 text-xl sm:text-[18px] 
     ${domine.className}`}

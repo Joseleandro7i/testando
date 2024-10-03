@@ -1,8 +1,8 @@
 {
   "calculadora": [
     {
-      "idElemPosicionar": "DescricaoCalculadora",
-      "idElemSuporte": "ImgCalculadora",
+      "refElemPosicionar": "DescricaoCalculadora",
+      "refElemSuporte": "ImgCalculadora",
       "nomeProjeto": "Calculadora OES",
       "urlDeploy": "https://calculadora-oes.vercel.app/",
       "urlRepositorio": "https://github.com/Jose-leandro/Calculadora-OES",
@@ -33,8 +33,8 @@
   ],
   "gedf": [
     {
-      "idElemPosicionar": "DescricaoGedf",
-      "idElemSuporte": "ImgGedf",
+      "refElemPosicionar": "DescricaoGedf",
+      "refElemSuporte": "ImgGedf",
       "nomeProjeto": "Gerenciador Finaceiro Gedf",
       "urlDeploy": "https://gerenciador-financeiro-gedf.vercel.app/",
       "urlRepositorio": "https://github.com/Jose-leandro/Gerenciador-Financeiro-Gedf",
@@ -61,8 +61,8 @@
   ],
   "reanotes": [
     {
-      "idElemPosicionar": "DescricaoReanotes",
-      "idElemSuporte": "ImgReanotes",
+      "refElemPosicionar": "DescricaoReanotes",
+      "refElemSuporte": "ImgReanotes",
       "nomeProjeto": "ReaNotes",
       "urlDeploy": "https://rea-notes.vercel.app/",
       "urlRepositorio": "https://github.com/Jose-leandro/ReaNotes",
@@ -101,8 +101,8 @@
   ],
   "spotifyimersaofrontend": [
     {
-      "idElemPosicionar": "DescricaoSpotifyImersao",
-      "idElemSuporte": "ImgSpotifyImersao",
+      "refElemPosicionar": "DescricaoSpotifyImersao",
+      "refElemSuporte": "ImgSpotifyImersao",
       "nomeProjeto": "Spotify Imersão Front-end",
       "urlDeploy": "https://spotify-imersao-front-end-jose-leandro.vercel.app/",
       "urlRepositorio": "https://github.com/Jose-leandro/Spotify-Imersao-Front-End",

@@ -11,17 +11,32 @@
   ],
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env PORT=${PORT:-4000} next dev",
+    "dev": "cross-env PORT=4000 next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "check-updates": "npx npm-check-updates",
-    "json-server": "json-server --watch api-projetos/projetos.json --port ${JSON_PORT:-8000}",
-    "start-vercel": "concurrently \"npm run dev\" \"npm run json-server\"",
-    "prepare": "husky"
+    "json-server": "cross-env JSON_PORT=8000 json-server --watch api-projetos/projetos.json --port 8000",
+    "dev-json_server": "concurrently \"npm run dev\" \"npm run json-server\"",
+    "prepare": "husky",
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.css": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "repository": {
     "type": "GitHub",
@@ -34,30 +49,39 @@
   },
   "homepage": "https://github.com/Jose-leandro/Portfolio#readme",
   "dependencies": {
-    "next": "^14.2.3",
+    "concurrently": "^9.0.1",
+    "cross-env": "^7.0.3",
+    "next": "^14.2.13",
+    "npm-force-resolutions": "^0.0.10",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "sonner": "^1.4.41"
+    "sonner": "^1.5.0"
   },
   "devDependencies": {
     "@eslint/config-array": "^0.18.0",
     "@eslint/object-schema": "^2.1.4",
-    "autoprefixer": "^10.4.19",
-    "eslint": "^8.57.0",
-    "eslint-config-next": "^14.2.5",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.11.1",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-next": "^14.2.13",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-promise": "^7.1.0",
-    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react": "^7.37.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "glob": "^11.0.0",
     "globals": "^15.9.0",
-    "husky": "^9.1.4",
-    "lint-staged": "^15.2.9",
-    "postcss": "^8.4.38",
+    "husky": "^9.1.6",
+    "json-server": "^1.0.0-beta.3",
+    "lint-staged": "^15.2.10",
+    "postcss": "^8.4.47",
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "^3.4.13"
+  },
+  "resolutions": {
+    "@humanwhocodes/config-array": "0.12.0",
+    "rimraf": "4.0.0"
   }
 }

@@ -25,44 +25,29 @@ export default function Projetos() {
     spotifyimersaofrontend: true,
   });
 
-  const updateStateClicadoX = (newState) => {
-    console.log(newState);
+  const handleToggleVisibility = (projectKey) => {
     setEstaClicadoX((prevState) => {
       const novoEstado = !prevState;
-      console.log('Novo estado calculado:', novoEstado);
       return novoEstado;
-    });
-  };
-
-  console.log(estaClicadoX);
-
-  const showNewSateForHandleToggleVisibility = () => {
-    Object.keys(newState).forEach((key) => {
-      console.log(estaClicadoX);
-      if (estaClicadoX) {
-        newState[key] =
-          key === projectKey ? !prevState[projectKey] : prevState[projectKey];
-      } else {
-        newState[key] =
-          key === projectKey ? prevState[projectKey] : !prevState[projectKey];
-      }
+      console.log('Novo estado calculado:', novoEstado);
     });
 
-    return newState;
-  };
-
-  /**
-   * Responsavel pelo os botão de visibilidade dos projetos.
-   * @param {string} projectKey - A chave do projeto para alternar.
-   */
-  const handleToggleVisibility = (projectKey) => {
     setEstaVisivel((prevState) => {
       const newState = { ...prevState };
-      console.log(estaClicadoX);
 
-      showNewSateForHandleToggleVisibility(newState);
+        console.log(estaClicadoX)
+        Object.keys(newState).forEach((key) => {
+          if (estaClicadoX) {
+            console.log(newState[key] = true)
+          } else {
+            console.log(newState[key] = key === projectKey ? newState[projectKey] : !newState[projectKey])
+          }
+      });
+      console.log(newState)
+      return newState; // Return the new state of visibility
     });
   };
+
 
   useEffect(() => {
     const projectKeys = [
@@ -114,8 +99,7 @@ export default function Projetos() {
             <CriarProjetos
               key={key}
               dateCreateProject={temDadosProjetos[key]}
-              state={estaVisivel[key]}
-              updateStateClicadoX={updateStateClicadoX}
+              state={estaVisivel ? estaVisivel[key] : undefined}
               handleClickProjeto={() => handleToggleVisibility(key)}
             />
           ) : (

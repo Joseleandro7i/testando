@@ -42,7 +42,7 @@ CriarProjetos.propTypes = {
   }).isRequired,
   state: PropTypes.bool.isRequired,
   handleClickProjeto: PropTypes.func.isRequired,
-  updateStateClicadoX: PropTypes.func.isRequired,
+  // updateStateClicadoX: PropTypes.func.isRequired,
 };
 
 /**
@@ -60,8 +60,9 @@ export default function CriarProjetos({
   dateCreateProject,
   state,
   handleClickProjeto,
-  updateStateClicadoX,
+  // updateStateClicadoX,
 }) {
+  console.log(state)
   const refs = useRef({
     refElemSuporte: null,
     refElemPosicionar: null,
@@ -101,10 +102,10 @@ export default function CriarProjetos({
         className="flex flex-col justify-around w-auto h-auto my-6 items-start"
         id={dateCreateProject.id}
       >
-        <div className="flex flex-col justify-evenly items-center h-auto">
+        <div className="flex flex-col justify-center items-center h-auto">
           <div className="flex justify-center items-center h-auto w-full">
             <Image
-              className="w-[80vh] h-[50vh] sm:w-[450px] sm:h-60 rounded-2xl border-[1.9px] border-solid
+              className="w-4/5 h-[40vh] sm:w-[450px] sm:h-60 rounded-2xl border-[1.9px] border-solid
               border-custom-white md:w-[350px]
                md:h-52 xl:h-64 xl:w-[410px]"
               src={dateCreateProject.imgProjeto}
@@ -174,7 +175,7 @@ export default function CriarProjetos({
                 className="py-1 px-2 bg-transparent border-[1.9px]
                 border-solid border-custom-white rounded"
                 onClick={() => {
-                  updateStateClicadoX(true);
+                  // // updateStateClicadoX(true);
                   handleClickProjeto();
                   setEstaVisivelProjeto(false);
                 }}
@@ -200,9 +201,10 @@ export default function CriarProjetos({
                     (element, index) => (
                       <Image
                         key={index}
-                        layout='fill'
                         className="h-10 mx-5 border-[1.9px] border-solid
                       border-custom-white rounded-xl"
+                        width={60}
+                        height={60}
                         src={element.path}
                         alt={element.alt}
                       />

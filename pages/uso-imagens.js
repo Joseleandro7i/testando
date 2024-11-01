@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import React from 'react';
 
 /**
@@ -20,8 +19,8 @@ const UsoImagens = () => {
            de bancos de imagens."
         />
       </Head>
-      <body>
-        <header
+      <main>
+        <div
           className="w-full h-24 flex flex-col
         justify-evenly items-center"
         >
@@ -35,21 +34,20 @@ const UsoImagens = () => {
             é necessário consultar as informações de cada banco de imagens antes
             de utilizar qualquer recurso visual no projeto.
           </p>
-        </header>
+        </div>
 
-        <main className="flex mt-5 mb-2 flex-wrap justify-evenly">
+        <div className="flex mt-5 mb-2 flex-wrap justify-evenly">
           {iconsData.map((icon, index) => (
             <div
               className="w-[25%] text-center flex flex-col
            justify-evenly items-center mb-2 mt-3"
               key={index}
             >
-              <Image
+              <img
                 src={icon.imgSrc}
                 className="px-2 my-2"
                 alt={icon.name}
-                layout="fill"
-                objectFit="contain"
+               
               />
 
               <div className="w-full flex flex-col text-center">
@@ -64,7 +62,7 @@ const UsoImagens = () => {
                 <span className="w-auto"> icon by </span>
                 <a
                   href="https://icons8.com"
-                  className="w-auto"
+                  className="w-auto text-blue-700"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -73,13 +71,11 @@ const UsoImagens = () => {
               </div>
             </div>
           ))}
-        </main>
+        </div>
 
         <footer className="h-auto px-4 my-4 w-full flex flex-col items-center">
-          <Image
+          <img
             className="mt-2 mb-3"
-            layout="fill"
-            objectFit="contain"
             src="/img/logo.png"
             alt="Foto do desenvolvedor do site josé leandro"
           />
@@ -87,7 +83,7 @@ const UsoImagens = () => {
             &copy; Construido e desenvolvido por José leandro do nascimento
           </p>
         </footer>
-      </body>
+      </main>
     </>
   );
 };
@@ -127,7 +123,7 @@ const iconsData = [
     link: 'https://icons8.com/icon/20906/git',
   },
   {
-    imgSrc: 'img/github.png',
+    imgSrc: '/img/github.png',
     name: 'GitHub',
     link: 'https://icons8.com/icon/16318/github',
   },
@@ -155,6 +151,16 @@ const iconsData = [
     imgSrc: '/img/sass.png',
     name: 'atrevimento',
     link: 'https://icons8.com/icon/QBqFNfPPB2Kx/atrevimento',
+  },
+  {
+    imgSrc: '/img/icons8-vite-logo-48.png',
+    name: 'vite-logo',
+    link: 'https://icons8.com/icon/dJjTWMogzFzg/vite',
+  },
+  {
+    imgSrc: '/img/icons8-typescript-48.png',
+    name: 'typescript',
+    link: 'https://icons8.com/icon/wpZmKzk11AzJ/typescript',
   },
   {
     imgSrc: '/img/soft-skills.png',

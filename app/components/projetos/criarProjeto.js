@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import useAutoRespon from '../../../lib/useAutoRespon';
 import Image from 'next/image';
 
-// eslint-disable-next-line new-cap
+ 
 const domine = Domine({
   subsets: ['latin'],
   weight: '500',
@@ -78,7 +78,7 @@ export default function CriarProjetos({
     setPositionElem(refs.current.refElemPosicionar);
 
   }, [supportElem, positionElem, dateCreateProject]);
-  
+
   useAutoRespon(supportElem, positionElem);
 
 
@@ -93,11 +93,9 @@ export default function CriarProjetos({
   };
 
   return (
-    <div
-      className={`h-auto w-auto flex-wrap 
+    <div className={`h-auto w-auto flex-wrap
     ${state ? 'flex flex-col items-center' : 'hidden'} mt-auto xl:mx-4 2xl:mx-0
-     justify-evenly items-start`}
-    >
+     justify-evenly items-start`}>
       <div
         className="flex flex-col justify-around w-auto h-auto my-6 items-start"
         id={dateCreateProject.id}
@@ -105,22 +103,22 @@ export default function CriarProjetos({
         <div className="flex flex-col justify-center items-center h-auto">
           <div className="flex justify-center items-center h-auto w-full">
             <Image
-              className="w-4/5 h-[40vh] sm:w-[450px] sm:h-60 rounded-2xl border-[1.9px] border-solid
+              className="w-auto sm:w-[450px] sm:h-60 rounded-2xl border-[1.9px] border-solid
               border-custom-white md:w-[350px]
                md:h-52 xl:h-64 xl:w-[410px]"
               src={dateCreateProject.imgProjeto}
               width={250}
               height={176}
-              ref={(el) => (refs.current.refElemSuporte = el)} 
-          
+              ref={(el) => (refs.current.refElemSuporte = el)}
+
               alt={'Img'}
             />
             <div
               className="items-center rounded-2xl flex flex-col h-44 w-[90%]
                md:w-[95%] xl:h-[256px] justify-evenly absolute text-center
                top-auto xl:w-[410px] bg-dark-clear opacity-0 hover:opacity-100"
-               id={dateCreateProject.refElemPosicionar}
-               ref={(el) => (refs.current.refElemPosicionar = el)}  
+              id={dateCreateProject.refElemPosicionar}
+              ref={(el) => (refs.current.refElemPosicionar = el)}
             >
               <h2
                 className={`py-2 px-3 sm:my-2 xl:ml-10 font-extralight 
@@ -132,7 +130,7 @@ export default function CriarProjetos({
               <div className="flex justify-evenly w-full">
                 <button
                   className="cursor-pointer border-[1.9px] border-solid
-                  border-custom-white rounded-xl py-2 px-4 text-center
+                  border-custom-white rounded-xl p-1 md:py-2 md:px-3 text-center
                   mx-2 text-white h-auto bg-ligth-dark hover:rounded-lg
                   active:rounded-md font-serif"
                   onClick={visivelDescricao}
@@ -167,7 +165,7 @@ export default function CriarProjetos({
 
           <div
             className={`bg-transparent border-[1.9px] border-solid 
-            border-custom-white rounded-xl p-6 text-center h-auto w-2/4 mt-16
+            border-custom-white rounded-xl p-6 text-center h-auto w-3/5 mt-16
              ${estaVisivelProjeto ? 'visible' : 'hidden'}`}
           >
             <div className="flex flex-col w-auto h-auto items-end mb-2">
@@ -199,12 +197,10 @@ export default function CriarProjetos({
                 {dateCreateProject.numerosImagens &&
                   Object.values(dateCreateProject.numerosImagens).map(
                     (element, index) => (
-                      <Image
+                      <img
                         key={index}
-                        className="h-10 mx-5 border-[1.9px] border-solid
+                        className="ml-3 w-8 mx-5 border-[1.9px] border-solid
                       border-custom-white rounded-xl"
-                        width={60}
-                        height={60}
                         src={element.path}
                         alt={element.alt}
                       />

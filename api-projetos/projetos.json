@@ -14,17 +14,22 @@
           "alt": "Logo da tecnologia react.js"
         },
         "img2": {
-          "path": "/img/nodejs.png",
-          "alt": "Logo da tecnologia node.js"
-        },
-        "img3": {
           "path": "/img/javascript.png",
           "alt": "Logo da tecnologia javascript"
         },
-        "img4": { "path": "/img/html.png", "alt": "Logo da tecnologia html" },
-        "img5": { "path": "/img/css.png", "alt": "Logo da tecnologia css" },
-        "img6": { "path": "/img/git.png", "alt": "Logo da tecnologia git" },
-        "img7": {
+        "img3": {
+          "path": "/img/html.png",
+          "alt": "Logo da tecnologia html"
+        },
+        "img4": {
+          "path": "/img/css.png",
+          "alt": "Logo da tecnologia css"
+        },
+        "img5": {
+          "path": "/img/git.png",
+          "alt": "Logo da tecnologia git"
+        },
+        "img6": {
           "path": "/img/github.png",
           "alt": "Logo da tecnologia github"
         }
@@ -49,9 +54,18 @@
           "path": "/img/javascript.png",
           "alt": "Logo da tecnologia javascript"
         },
-        "img4": { "path": "/img/html.png", "alt": "Logo da tecnologia html" },
-        "img5": { "path": "/img/css.png", "alt": "Logo da tecnologia css" },
-        "img6": { "path": "/img/git.png", "alt": "Logo da tecnologia git" },
+        "img4": {
+          "path": "/img/html.png",
+          "alt": "Logo da tecnologia html"
+        },
+        "img5": {
+          "path": "/img/css.png",
+          "alt": "Logo da tecnologia css"
+        },
+        "img6": {
+          "path": "/img/git.png",
+          "alt": "Logo da tecnologia git"
+        },
         "img7": {
           "path": "/img/github.png",
           "alt": "Logo da tecnologia github"
@@ -70,29 +84,38 @@
       "textoDescricao": "O ReaNotes é mais do que um aplicativo de notas, é a sua ferramenta pessoal para capturar e organizar suas ideias. Experimente e explore o ReaNotes e descubra uma nova maneira de registrar suas notas!",
       "numerosImagens": {
         "img1": {
-          "path": "/img/vitejs.png",
+          "path": "/img/icons8-vite-logo-48.png",
           "alt": "Logo do framework Vite.js"
         },
         "img2": {
           "path": "/img/react.png",
           "alt": "Logo da tecnologia react.js"
         },
-        "img3": {
-          "path": "/img/typescript.png",
-          "alt": "Logo da tecnologia TypeScript"
-        },
         "img4": {
           "path": "/img/javascript.png",
           "alt": "Logo da tecnologia javascript"
         },
         "img5": {
+          "path": "/img/icons8-typescript-48.png",
+          "alt": "Logo da tecnologia typescript"
+        },
+        "img6": {
           "path": "/img/sass.png",
           "alt": "Logo do pré-processadores css conhecido como Sass"
         },
-        "img6": { "path": "/img/html.png", "alt": "Logo da tecnologia html" },
-        "img7": { "path": "/img/css.png", "alt": "Logo da tecnologia css" },
-        "img8": { "path": "/img/git.png", "alt": "Logo da tecnologia git" },
+        "img7": {
+          "path": "/img/html.png",
+          "alt": "Logo da tecnologia html"
+        },
+        "img8": {
+          "path": "/img/css.png",
+          "alt": "Logo da tecnologia css"
+        },
         "img9": {
+          "path": "/img/git.png",
+          "alt": "Logo da tecnologia git"
+        },
+        "img10": {
           "path": "/img/github.png",
           "alt": "Logo da tecnologia github"
         }
@@ -113,9 +136,18 @@
           "path": "/img/javascript.png",
           "alt": "Logo da tecnologia javascript"
         },
-        "img4": { "path": "/img/html.png", "alt": "Logo da tecnologia html" },
-        "img5": { "path": "/img/css.png", "alt": "Logo da tecnologia css" },
-        "img6": { "path": "/img/git.png", "alt": "Logo da tecnologia git" },
+        "img4": {
+          "path": "/img/html.png",
+          "alt": "Logo da tecnologia html"
+        },
+        "img5": {
+          "path": "/img/css.png",
+          "alt": "Logo da tecnologia css"
+        },
+        "img6": {
+          "path": "/img/git.png",
+          "alt": "Logo da tecnologia git"
+        },
         "img7": {
           "path": "/img/github.png",
           "alt": "Logo da tecnologia github"

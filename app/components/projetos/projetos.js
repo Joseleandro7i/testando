@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Domine } from 'next/font/google';
 import CriarProjetos from './criarProjeto';
 
-// eslint-disable-next-line new-cap
+ 
 const domine = Domine({
   subsets: ['latin'],
   weight: '500',

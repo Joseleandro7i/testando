@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Domine } from 'next/font/google';
 
-// eslint-disable-next-line new-cap
+ 
 const domine = Domine({
   subsets: ['latin'],
   weight: '500',

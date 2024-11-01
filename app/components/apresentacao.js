@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Domine } from 'next/font/google';
 import Image from 'next/image';
 
-// eslint-disable-next-line new-cap
+ 
 const domine = Domine({
   subsets: ['latin'],
   weight: '500',
@@ -21,7 +21,7 @@ const ProfileImage = ({ src, alt }) => (
   <Image
     width={100}
     height={112}
-    className="rounded-full md:h-36 mt-2"
+    className="rounded-full w-auto h-auto md:h-36 mt-2"
     src={src}
     alt={alt}
   />

@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Domine } from 'next/font/google';
 import { toast } from 'sonner';
 
-// eslint-disable-next-line new-cap
+ 
 const domine = Domine({
   subsets: ['latin'],
   weight: '500',

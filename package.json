@@ -14,7 +14,7 @@
     "dev": "cross-env PORT=4000 next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint \"./**/*.{js,ts,jsx,tsx}\"",
     "check-updates": "npx npm-check-updates",
     "json-server": "cross-env JSON_PORT=8000 json-server --watch api-projetos/projetos.json --port 8000",
     "dev-json_server": "concurrently \"npm run dev\" \"npm run json-server\"",

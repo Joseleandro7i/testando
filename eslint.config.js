@@ -30,7 +30,7 @@ module.exports = [
     },
     rules: {
       ...react.configs.recommended.rules,               // React recommended rules
-      ...jsxA11y.configs.recommended.rules,             // Accessibility recommended rules
+      ...jsxA11y.configs.recommended.rules,   
 
       'react/react-in-jsx-scope': 'off', // Next.js specific rule
       'jsx-a11y/alt-text': 'error',

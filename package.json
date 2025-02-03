@@ -19,7 +19,8 @@
     "json-server": "cross-env JSON_PORT=8000 json-server --watch api-projetos/projetos.json --port 8000",
     "dev-json_server": "concurrently \"npm run dev\" \"npm run json-server\"",
     "prepare": "husky",
-    "preinstall": "npx npm-force-resolutions"
+    "preinstall": "npx npm-force-resolutions",
+    "prepush": "cross-env NODE_OPTIONS='--max_old_space_size=4096' husky-run pre-push"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -49,27 +50,35 @@
   },
   "homepage": "https://github.com/Jose-leandro/Portfolio#readme",
   "dependencies": {
+    "@axe-core/react": "^4.10.0",
+    "clsx": "^2.1.1",
     "concurrently": "^9.0.1",
-    "cross-env": "^7.0.3",
+    "eslint-plugin-no-magics": "^1.0.7",
     "next": "^14.2.13",
     "npm-force-resolutions": "^0.0.10",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "sonner": "^1.5.0"
+    "sonner": "^1.5.0",
+    "string-width": "^4.2.3"
   },
   "devDependencies": {
     "@eslint/config-array": "^0.18.0",
     "@eslint/object-schema": "^2.1.4",
     "autoprefixer": "^10.4.20",
-    "eslint": "^9.11.1",
+    "axe-core": "^4.10.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.14.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-next": "^14.2.13",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-jsx-a11y": "^6.10.0",
+    "eslint-plugin-clean-code": "^0.1.12",
+    "eslint-plugin-jsdoc": "^50.4.3",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-promise": "^7.1.0",
-    "eslint-plugin-react": "^7.37.0",
-    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-unicorn": "^56.0.0",
     "glob": "^11.0.0",
     "globals": "^15.9.0",
     "husky": "^9.1.6",
@@ -83,5 +92,13 @@
   "resolutions": {
     "@humanwhocodes/config-array": "0.12.0",
     "rimraf": "4.0.0"
+  },
+  "overrides": {
+    "eslint-config-next": {
+      "eslint": "^8.57.1"
+    },
+    "eslint-plugin-jsx-a11y": {
+      "eslint": "^8.57.1"
+    }
   }
 }

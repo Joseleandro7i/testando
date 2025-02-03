@@ -1,0 +1,56 @@
+# echo "Checking branch and pushing changes..."
+
+if [ "$(git rev-parse --abbrev-ref HEAD)" = "develop" ]; then
+  cross-env NODE_OPTIONS='--max_old_space_size=4096' 
+else
+  echo "Not on the develop branch, skipping tests."
+fi
+
+BRANCH_NAME=$(git symbolic-ref --short HEAD)
+# echo "Current branch: $BRANCH_NAME"
+
+EXPECTED_REMOTE_URL="https://github.com/Jose-leandro/Portfolio.git"
+REMOTE_URL=$(git config --get remote.origin.url)
+
+abort_with_message() {
+  echo "$1"
+  exit "$2"
+}
+
+merge_and_push() {
+  TARGET_BRANCH=$1
+  echo "Merging $BRANCH_NAME into $TARGET_BRANCH..."
+  git checkout $TARGET_BRANCH
+  git merge --no-ff "$BRANCH_NAME" || abort_with_message "Merge failed. Aborting." 3
+  echo "Pushing $TARGET_BRANCH to remote..."
+  git push "$EXPECTED_REMOTE_URL" "$TARGET_BRANCH" || abort_with_message "Push failed. Aborting." 4
+  git checkout "$BRANCH_NAME"
+}
+
+if [ "$REMOTE_URL" = "$EXPECTED_REMOTE_URL" ]; then
+  # echo "Remote URL matches."
+
+  case "$BRANCH_NAME" in
+    "develop")
+      echo "Develop branch detected. Pushing changes."
+      git push "$EXPECTED_REMOTE_URL" "$BRANCH_NAME"
+      ;;
+    feature/*)
+      echo "Feature branch detected. Pushing changes."
+      git push "$EXPECTED_REMOTE_URL" "$BRANCH_NAME"
+      ;;
+    bugfix/*)
+      echo "Bugfix branch detected. Merging into 'develop' and pushing changes."
+      merge_and_push "develop"
+      ;;
+    hotfix/*)
+      echo "Hotfix branch detected. Merging into 'main' and pushing changes."
+      merge_and_push "main"
+      ;;
+    *)
+      abort_with_message "This branch does not match the required patterns. Push manually." 1
+      ;;
+  esac
+else
+  abort_with_message "Remote URL does not match. Aborting push." 2
+fi

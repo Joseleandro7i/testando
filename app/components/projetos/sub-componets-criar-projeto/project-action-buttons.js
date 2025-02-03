@@ -12,8 +12,6 @@ import clsx from 'clsx';
  */
 const openLink = (url) => window.open(url, '_blank');
 
-// Define constants for reusable class names
-const containerClass = "items-center rounded-2xl flex flex-col h-44 w-[90%] md:w-[95%] xl:h-[256px] justify-evenly absolute text-center top-auto xl:w-[410px] bg-dark-clear opacity-0 hover:opacity-100";
 
 const headingClass = "py-2 px-3 sm:my-2 xl:ml-10 font-extralight sm:px-6 bg-ligth-dark rounded-lg text-center sm:py-3 shadow-customShadow font-domine";
 
@@ -27,38 +25,35 @@ const getButtonClass = (isActive, isHovered) => clsx(
 );
 
 /**
- * ProjectActionButtons component renders action buttons for a project.
- *
- * @component
- * @param {Object} props - The props for the component.
- * @param {string} props.referenceElementPosicionar - The ID for positioning the element.
- * @param {function} props.assignPositionReference - Ref callback for positioning.
- * @param {string} props.nomeProjeto - The name of the project to display.
- * @param {function} props.handleDescriptionClick - Click handler for the description button.
- * @param {function} props.handleViewClick - Click handler for the view button (not used directly).
- * @param {string} props.urlDeploy - The URL to deploy the project.
- * @param {string} props.urlRepositorio - The URL to the project's repository.
- * 
+ * @param {Object} projectData - The data related to the project.
+ * @param {string} projectData.referenceElementPosition - The ID for positioning the element.
+ * @param {string} projectData.ProjectName - The name of the project to display.
+ * @param {string} [projectData.urlDeploy] - The URL to deploy the project.
+ * @param {string} [projectData.urlRepository] - The URL to the project's repository.
+ * @param {function} projectData.toggleDescription - Click handler for the description button.
  * @returns {JSX.Element} The rendered component.
  */
-const ProjectActionButtons = ({ referenceElementPosicionar, assignPositionReference, nomeProjeto, handleDescriptionClick,
-  handleViewClick, urlDeploy, urlRepositorio }) => {
+function ProjectActionButtons( projectData ) {
+
+  const  {
+    referenceElementPosition, ProjectName, urlDeploy, urlRepository, toggleDescription } = projectData;
 
   const handleVisualizarClick = () => openLink(urlDeploy);
-  const handleRepositorioClick = () => openLink(urlRepositorio);
+  const handleRepositorioClick = () => openLink(urlRepository);
 
   const buttons = [
-    { label: "Descrição", onClick: handleDescriptionClick },
+    { label: "Descrição", onClick: handleVisualizarClick },
     { label: "Visualizar", onClick: handleVisualizarClick },
     { label: "Repositório", onClick: handleRepositorioClick }
   ];
 
   return (
-    <div className={containerClass}
-      id={referenceElementPosicionar} ref={assignPositionReference} >
+    <div className="items-center rounded-2xl flex flex-col h-44 w-[90%] md:w-[95%] xl:h-[256px]
+     justify-evenly absolute text-center top-auto xl:w-[410px] bg-dark-clear opacity-0 
+     hover:opacity-100" id={referenceElementPosition} ref={referenceElementPosition} >
 
       <h2 className={headingClass} >
-        {nomeProjeto} </h2>
+        {ProjectName} </h2>
 
       <div className="flex justify-evenly w-full">
         {buttons.map((button) => (
@@ -69,20 +64,24 @@ const ProjectActionButtons = ({ referenceElementPosicionar, assignPositionRefere
   );
 }
 
+
 // PropTypes validation
 ProjectActionButtons.propTypes = {
-  referenceElementPosicionar: PropTypes.string.isRequired,
-  assignPositionReference: PropTypes.func.isRequired,
-  nomeProjeto: PropTypes.string.isRequired,
-  handleDescriptionClick: PropTypes.func.isRequired,
-  handleViewClick: PropTypes.func, 
-  urlDeploy: PropTypes.string.isRequired,
-  urlRepositorio: PropTypes.string.isRequired
+  projectData: PropTypes.shape({
+    referenceElementPosition: PropTypes.string.isRequired,
+    ProjectName: PropTypes.string.isRequired,
+    urlDeploy: PropTypes.string,
+    urlRepository: PropTypes.string,
+    toggleDescription: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
-// Add default props
+// Default props for fallback values
 ProjectActionButtons.defaultProps = {
-  handleViewClick: () => console.warn("No view click handler provided"),
+  projectData: {
+    urlDeploy: undefined,
+    urlRepository: undefined,
+  },
 };
 
 // Wrap the component with the HOC during export

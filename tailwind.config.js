@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  mode: 'jit',
+  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './app/components/**/*.{js,ts,jsx,tsx}'],
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -34,6 +36,7 @@ module.exports = {
           'sans-serif',
         ],
         serif: ['Noto Serif JP', 'serif'],
+        domine: ['Domine', 'serif'], 
       },
     },
   },

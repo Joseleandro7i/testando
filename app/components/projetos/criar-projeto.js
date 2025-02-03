@@ -4,37 +4,49 @@ import ProjectSection from './sub-componets-criar-projeto/project-section';
 import useAutoRespon from '../../../lib/useAutoRespon';
 import withProjectLogic from './with-project-logic';
 
-const classes = {
-  rootContainer: 'h-auto w-auto mt-auto xl:mx-4 2xl:mx-0 justify-evenly flex-col items-center',
-  visible: 'flex',
-  hidden: 'hidden',
-};
-
+/**
+ * The `CriarProjetos` component is responsible for rendering a section 
+ * to create or display project details. It integrates positioning logic 
+ * and dynamic rendering based on state.
+ *
+ * @param {Object} props - The component props.
+ * @param props.projectData
+ * @param props.state
+ * @param props.toggleDescription
+ * @returns {React.Element | null} - The rendered component or `null` if `projectData` is missing.
+ */
 const CriarProjetos = ({
-  dateCreateProject,
+  projectData,
   state,
-  references,
-  assignSupportReference,
-  toggleDescription
+  toggleDescription,
 }) => {
+  console.log(projectData)
+  // Automatically handle positioning logic
+  useAutoRespon(
+    projectData.refElemSuporte?.current,
+    projectData.referenceElementPosicionar?.current
+  );
 
-  useAutoRespon(references.current.refElemSuporte, references.current.referenceElementPosicionar);
-
-  if (!dateCreateProject) {return undefined}
+  // Do not render if `projectData` is missing
+  if (!projectData) {return undefined;}
 
   return (
-    <div className={`${classes.rootContainer} ${state ? classes.visible : classes.hidden}`}>
+    <div
+      className={`h-auto w-auto mt-auto xl:mx-4 2xl:mx-0 justify-evenly flex-col items-center ${
+        state ? 'flex' : 'hidden'
+      }`}
+    >
       <ProjectSection
-        dateCreateProject={dateCreateProject}
-        assignSupportReference={assignSupportReference}
+        projectData={projectData}
         toggleDescription={toggleDescription}
       />
     </div>
   );
 };
 
+// Define PropTypes for validation
 CriarProjetos.propTypes = {
-  dateCreateProject: PropTypes.shape({
+  projectData: PropTypes.shape({
     urlDeploy: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     refElemSuporte: PropTypes.string.isRequired,
@@ -51,12 +63,8 @@ CriarProjetos.propTypes = {
     ).isRequired,
   }).isRequired,
   state: PropTypes.bool.isRequired,
-  references: PropTypes.object.isRequired,
-  assignSupportReference: PropTypes.func.isRequired,
   toggleDescription: PropTypes.func.isRequired,
-  supportElement: PropTypes.any,
-  positionElement: PropTypes.any,
 };
 
-// Wrap the component with the HOC during export
+// Wrap the component with additional logic
 export default withProjectLogic(CriarProjetos);
